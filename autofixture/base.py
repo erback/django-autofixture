@@ -126,9 +126,6 @@ class AutoFixtureBase(object):
     if hasattr(fields, 'UUIDField'):
         field_to_generator[fields.UUIDField] = generators.UUIDGenerator
 
-    if 'django.contrib.gis' in settings.INSTALLED_APPS:
-        field_to_generator[PointField] = generators.PointFieldGenerator
-
     field_values = Values()
 
     default_constraints = [
